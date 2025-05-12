@@ -23,11 +23,11 @@ st.markdown(
 def load_model():
     try:
         # Load model
-        with open('/home/mohamedplays56/python/machine learning/FIN/modele_tree.pkl', 'rb') as f:
+        with open('modele_tree.pkl', 'rb') as f:
             model = pickle.load(f)
         
         # Load encoders (ensure this is a dictionary of LabelEncoders)
-        with open('/home/mohamedplays56/python/machine learning/FIN/mushroom_artifacts.pkl', 'rb') as f:
+        with open('mushroom_artifacts.pkl', 'rb') as f:
             encoders = pickle.load(f)
             
         return model, encoders
@@ -125,7 +125,7 @@ if st.button('Analyser les champignons'):
     try:
         # === Distribution des classes et caractéristiques ===
         st.write("### 1. Distribution des classes (Comestible vs Vénéneux)")
-        class_img = Image.open('/home/mohamedplays56/python/machine learning/FIN/class_distribution.png')
+        class_img = Image.open('class_distribution.png')
         st.image(class_img, use_container_width=True)
         st.markdown("""
         **Analyse** :  
@@ -135,7 +135,7 @@ if st.button('Analyser les champignons'):
 
         # === Forme du chapeau ===
         st.write("### 2. Forme du chapeau (Cap Shape)")
-        cap_img = Image.open('/home/mohamedplays56/python/machine learning/FIN/cap_shape.png')
+        cap_img = Image.open('cap_shape.png')
         st.image(cap_img,  use_container_width=True)
         st.markdown("""
         **Signification** :  
@@ -147,7 +147,7 @@ if st.button('Analyser les champignons'):
 
         # === Odeur ===
         st.write("### 3. Caractéristiques d'odeur")
-        odor_img = Image.open('/home/mohamedplays56/python/machine learning/FIN/odor_distribution.png')
+        odor_img = Image.open('odor_distribution.png')
         st.image(odor_img,  use_container_width=True)
         st.markdown("""
         **Clé des odeurs** :  
@@ -159,7 +159,7 @@ if st.button('Analyser les champignons'):
 
         # === Habitat vs Population ===
         st.write("### 4. Habitat vs Population")
-        habitat_img = Image.open('/home/mohamedplays56/python/machine learning/FIN/habitat_population.png')
+        habitat_img = Image.open('habitat_population.png')
         st.image(habitat_img,  use_container_width=True)
         st.markdown("""
         **Légende** :  
@@ -176,7 +176,7 @@ if st.button('Analyser les champignons'):
         st.write("### 5. Odeur vs Toxicité")
         col1, col2 = st.columns(2)
         with col1:
-            odor_class_img = Image.open('/home/mohamedplays56/python/machine learning/FIN/odor_vs_class.png')
+            odor_class_img = Image.open('odor_vs_class.png')
             st.image(odor_class_img,  use_container_width=True)
         with col2:
             st.markdown("""
@@ -189,7 +189,7 @@ if st.button('Analyser les champignons'):
         st.write("### 6. Couleur des spores vs Toxicité")
         col1, col2 = st.columns(2)
         with col1:
-            spore_class_img = Image.open('/home/mohamedplays56/python/machine learning/FIN/spore_color_vs_class.png')
+            spore_class_img = Image.open('spore_color_vs_class.png')
             st.image(spore_class_img,  use_container_width=True)
         with col2:
             st.markdown("""
@@ -200,7 +200,7 @@ if st.button('Analyser les champignons'):
 
         # 3. Habitat vs Classe
         st.write("### 7. Habitat vs Toxicité")
-        habitat_class_img = Image.open('/home/mohamedplays56/python/machine learning/FIN/habitat_vs_class.png')
+        habitat_class_img = Image.open('habitat_vs_class.png')
         st.image(habitat_class_img,  use_container_width=True)
         st.markdown("""
         **Insights** :  
@@ -211,7 +211,7 @@ if st.button('Analyser les champignons'):
 
         # 4. Bleus (Bruises)
         st.write("### 8. Présence de bleus vs Toxicité")
-        bruises_img = Image.open('/home/mohamedplays56/python/machine learning/FIN/bruises_vs_class.png')
+        bruises_img = Image.open('bruises_vs_class.png')
         st.image(bruises_img,  use_container_width=True)
         st.markdown("""
         **Résultat surprenant** :  
@@ -220,7 +220,7 @@ if st.button('Analyser les champignons'):
 
         # 5. Couleur des lamelles
         st.write("### 9. Couleur des lamelles vs Toxicité")
-        gill_color_img = Image.open('/home/mohamedplays56/python/machine learning/FIN/gill_color_vs_class.png')
+        gill_color_img = Image.open('gill_color_vs_class.png')
         st.image(gill_color_img,  use_container_width=True)
         st.markdown("""
         **Indicateurs forts** :  
